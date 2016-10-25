@@ -20,7 +20,7 @@ public class SpawnObject : MonoBehaviour {
 	void Update () {
 	
 		// 次の周期が来てないなら出現処理はしない
-		if (currentSeconds_ <= intervalSeconds_) {
+		if (currentSeconds_ < intervalSeconds_) {
 			currentSeconds_ += Time.deltaTime;
 			return;
 		}

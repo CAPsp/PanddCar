@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnObj_:
   - {fileID: 1000012044008826, guid: e86284843312b4f0da7568fad7df62ee, type: 2}
-  intervalSeconds_: 2
+  intervalSeconds_: 1
   spawnCircleRad_: 25
 --- !u!1 &590305494
 GameObject:

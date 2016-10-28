@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObj_:
-  - {fileID: 1000012044008826, guid: e86284843312b4f0da7568fad7df62ee, type: 2}
+  - {fileID: 0}
   intervalSeconds_: 1
   spawnCircleRad_: 25
 --- !u!4 &448893430
@@ -242,6 +242,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!146 &467905066 stripped
+WheelCollider:
+  m_PrefabParentObject: {fileID: 146000014223080378, guid: de5e9e832a30b40898d66f6aea1587d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300714654}
+--- !u!146 &567788569 stripped
+WheelCollider:
+  m_PrefabParentObject: {fileID: 146000011770097676, guid: de5e9e832a30b40898d66f6aea1587d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300714654}
+--- !u!146 &645163123 stripped
+WheelCollider:
+  m_PrefabParentObject: {fileID: 146000012442505222, guid: de5e9e832a30b40898d66f6aea1587d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300714654}
 --- !u!1001 &744339252
 Prefab:
   m_ObjectHideFlags: 0
@@ -419,6 +434,31 @@ Prefab:
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1953410305}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 645163123}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[2]
+      value: 
+      objectReference: {fileID: 467905066}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[3]
+      value: 
+      objectReference: {fileID: 567788569}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelEffects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1953410303}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
   m_IsPrefabParent: 0
@@ -895,6 +935,17 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d85d3a32fb6157d488e31edf82b7b1c4, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1953410303 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013038826416, guid: de5e9e832a30b40898d66f6aea1587d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300714654}
+  m_Script: {fileID: 11500000, guid: c62479c3465024b48b42983b1b2eeaaf, type: 3}
+--- !u!146 &1953410305 stripped
+WheelCollider:
+  m_PrefabParentObject: {fileID: 146000011994403594, guid: de5e9e832a30b40898d66f6aea1587d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300714654}
 --- !u!1001 &1995956154
 Prefab:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc70f316a8fb4d442b974db1e1898eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1580952824}
+  target: {fileID: 1822006485}
 --- !u!81 &416662578
 AudioListener:
   m_ObjectHideFlags: 0
@@ -418,6 +418,36 @@ Prefab:
     - target: {fileID: 1000013576879848, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000013631903550, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_WheelColliders.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010343977196, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
@@ -715,11 +745,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44884af1ac1d64d42902da40268ba120, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1580952824 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000012655830980, guid: de5e9e832a30b40898d66f6aea1587d4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1300714654}
 --- !u!1 &1757703806
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +808,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &1822006485 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010258297528, guid: de5e9e832a30b40898d66f6aea1587d4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300714654}
 --- !u!1 &1882121483
 GameObject:
   m_ObjectHideFlags: 0

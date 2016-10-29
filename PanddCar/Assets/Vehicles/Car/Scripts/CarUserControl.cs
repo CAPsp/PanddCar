@@ -6,13 +6,13 @@ namespace UnityStandardAssets.Vehicles.Car
     [RequireComponent(typeof (CarController))]
     public class CarUserControl : MonoBehaviour
     {
-        //private CarController m_Car; // the car controller we want to use
+        private CarController m_Car; // the car controller we want to use
 
 
         private void Awake()
         {
             // get the car controller
-           // m_Car = GetComponent<CarController>();
+            m_Car = GetComponent<CarController>();
         }
 
 
@@ -22,11 +22,10 @@ namespace UnityStandardAssets.Vehicles.Car
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
 #if !MOBILE_INPUT
-            //float handbrake = Input.GetAxis("Jump");
-            //m_Car.Move(h, v, v, handbrake);
-            GetComponent<Rigidbody>().MovePosition(transform.position + new Vector3(h, 0f, v));
+            float handbrake = Input.GetAxis("Jump");
+            m_Car.Move(h, v, v, handbrake);
 #else
-//            m_Car.Move(h, v, v, 0f);
+            m_Car.Move(h, v, v, 0f);
 #endif
         }
     }

@@ -1,0 +1,1 @@
+﻿using UnityEngine;using System.Collections;public class ScoreFrame : MonoBehaviour {    [SerializeField] GameObject buttons_;	void Update() {        // なんらかのボタンが押されたら終了        if (Input.anyKeyDown) {            buttons_.SetActive(true);            gameObject.SetActive(false);        }    }}

@@ -39,6 +39,11 @@ namespace Original {
 
             DebugCommon.Assert( 1 <= rank && rank <+ LIMIT_RANK );
 
+            // 新しいランクのために既存のランクをずらす処理
+            for(int i = LIMIT_RANK - 1; i >= rank; i--) {
+                PlayerPrefs.SetInt( (i + 1).ToString(), PlayerPrefs.GetInt(i.ToString()) );
+            }
+
             PlayerPrefs.SetInt( rank.ToString(), score );
 
         }

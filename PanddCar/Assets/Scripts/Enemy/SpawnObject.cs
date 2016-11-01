@@ -5,8 +5,9 @@ using System.Collections;
 public class SpawnObject : MonoBehaviour {
 
 	[SerializeField] GameObject[] spawnObj_;
-	[SerializeField] float intervalSeconds_;
-	[SerializeField] float spawnCircleRad_;		// 起点からの出現範囲を示す円の半径
+	[SerializeField] float intervalSeconds_ = 1f;
+	[SerializeField] float spawnCircleRad_  = 25f;		// 起点からの出現範囲を示す円の半径
+    [SerializeField] int initialEnemyNum_   = 100;
 
 	float currentSeconds_;	// 計測地点から今までの時間
 	Spawn spawn_;
@@ -15,6 +16,15 @@ public class SpawnObject : MonoBehaviour {
 		currentSeconds_ = 0f;
 		spawn_ 			= null;
 	}
+
+    // 初期値分、敵をスポーンさせる
+    void Start() {
+
+        for(int i = 0; i < initialEnemyNum_; i++) {
+            Spawn tmp = RandomSpawn();
+            tmp.InstantSpawn().transform.parent = this.transform;
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -28,13 +38,7 @@ public class SpawnObject : MonoBehaviour {
 		// 出現位置と出現オブジェクトをランダムに決めてSpawnオブジェクトを生成
 		if (spawn_ == null) {
 
-			// 起点位置(このObj自体) + xz面に並行な円内部のランダムな点 = 出現位置
-			Vector2 randCircle = Random.insideUnitCircle * spawnCircleRad_;
-			Vector3 spawnPoint = transform.position + new Vector3 (randCircle.x, 0, randCircle.y);
-
-			// C#既存の乱数生成クラスを使う(戻り値がintで使いやすい)
-			System.Random cRand = new System.Random ();
-			spawn_ = new Spawn (spawnObj_[cRand.Next(spawnObj_.Length)], spawnPoint);
+            spawn_ = RandomSpawn();
 		}
 
 		GameObject spawnedObj = spawn_.Update ();
@@ -46,6 +50,19 @@ public class SpawnObject : MonoBehaviour {
 		}
 
 	}
+
+    // 乱数で決めた位置にオブジェクトを出現させる
+    Spawn RandomSpawn() {
+
+        // 起点位置(このObj自体) + xz面に並行な円内部のランダムな点 = 出現位置
+        Vector2 randCircle = Random.insideUnitCircle * spawnCircleRad_;
+        Vector3 spawnPoint = transform.position + new Vector3(randCircle.x, 0, randCircle.y);
+
+        // C#既存の乱数生成クラスを使う(戻り値がintで使いやすい)
+        System.Random cRand = new System.Random();
+        return new Spawn(spawnObj_[cRand.Next(spawnObj_.Length)], spawnPoint);
+
+    }
 
 	// 出現処理を扱う内部クラス
 	class Spawn{
@@ -61,12 +78,19 @@ public class SpawnObject : MonoBehaviour {
 		// 出現処理。終わったら出現したオブジェクトを返す
 		public GameObject Update(){
 
-			// 今は特にエフェクトをかけないので生成するのみ
-			GameObject spawnedObj 			= Instantiate(obj_) as GameObject;
-			spawnedObj.transform.position 	= point_;
+            // 今は特にエフェクトをかけないので生成するのみ
+            return InstantSpawn();
 
-			return spawnedObj;
 		}
+
+        // 演出なしでいきなり出現させる
+        public GameObject InstantSpawn() {
+
+            GameObject spawnedObj = Instantiate(obj_) as GameObject;
+            spawnedObj.transform.position = point_;
+
+            return spawnedObj;
+        }
 
 	}
 

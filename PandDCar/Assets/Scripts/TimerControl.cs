@@ -8,6 +8,7 @@ public class TimerControl : MonoBehaviour {
 
     // 定数
     public const int DIGIT_NUMER = 3;
+    public GameObject gameover;
 
     [SerializeField] Sprite[] numbers_   = new Sprite[10];
     [SerializeField] int limitSeconds_;
@@ -62,6 +63,7 @@ public class TimerControl : MonoBehaviour {
             dropFlag = false;
         }
         if (seconds < 0) {
+            gameover.SendMessage("Zero");
             return; // TODO: GAME OVER処理
         }
         if(beforeSeconds_ != seconds) {

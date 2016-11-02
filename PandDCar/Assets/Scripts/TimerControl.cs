@@ -33,12 +33,13 @@ public class TimerControl : MonoBehaviour {
 
             imageObjects_[i] = new GameObject();
 
-            RectTransform rectTrans = imageObjects_[i].AddComponent<RectTransform>(); ;
+            RectTransform rectTrans = imageObjects_[i].AddComponent<RectTransform>();
             rectTrans.SetParent(this.transform);
             rectTrans.anchoredPosition  = new Vector2((i * imageWidth_) + (imageWidth_ / 2f), 0f);
             rectTrans.anchorMin         = new Vector2(0f, 0.5f);
             rectTrans.anchorMax         = new Vector2(0f, 0.5f);
             rectTrans.sizeDelta         = new Vector2(imageWidth_, parentRect.height);
+            rectTrans.localScale        = new Vector3(1f, 1f, 1f);
 
             imageObjects_[i].AddComponent<Image>();
             
@@ -97,8 +98,12 @@ public class TimerControl : MonoBehaviour {
 
     }
 
-    void Drop()
+    public void Drop()
     {
         dropFlag = true;       
+    }
+
+    public int GetRemainingSec() {
+        return limitSeconds_ - (int)currentTimer_;
     }
 }

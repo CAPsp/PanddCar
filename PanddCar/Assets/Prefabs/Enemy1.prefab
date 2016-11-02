@@ -278,10 +278,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012044008826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47c8e3df4af6f340a8a14d6d0d2022f, type: 3}
+  m_Script: {fileID: 11500000, guid: 63008981de6a6a94e9d126edcc43a845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseVol_: 1000
+  impulseVol_: 100
 --- !u!114 &114000013140267052
 MonoBehaviour:
   m_ObjectHideFlags: 1

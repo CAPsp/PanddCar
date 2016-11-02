@@ -1,0 +1,4 @@
+﻿using UnityEngine;using System.Collections;using UnityEngine.UI;using UnityEngine.SceneManagement;public class ClearEffect : MonoBehaviour {    [SerializeField] Color[] lerpColors_ = new Color[2];    [SerializeField] TimerControl timerControl_;    Text text_;    bool colorFromOneIndex_ = true;    void Awake() {        text_ = GetComponent<Text>();    }    void Start() {
+
+        // スコアを通知
+        GetComponentInChildren<HighScoreControl>().CheckScore( timerControl_.GetRemainingSec() );    }    void Update() {        timerControl_.enabled = false;        // 色を変化させる        text_.color = Color.Lerp(lerpColors_[0], lerpColors_[1], Mathf.PingPong(Time.time, 1f));        if (Input.GetKeyDown("mouse 0")) {            Fader.instance.BlackOut("title");        }    }}

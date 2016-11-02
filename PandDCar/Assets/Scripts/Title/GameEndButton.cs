@@ -5,27 +5,22 @@ using Original.UI;
 using UnityEngine.SceneManagement;
 
 public class GameEndButton : MonoBehaviour {
-
-    [SerializeField] Image displayImage_;
-
+    
     ButtonProcess buttonProcess_;
+    System.Action end = () => { Application.Quit(); };
 
     void Awake() {
 
-        buttonProcess_ = new ButtonProcess(  displayImage_,
-                                             0.5f,
-                                             GetComponent<AudioSource>());
-    }
-
-    void Update() {
-
-        if (buttonProcess_.Effect()) {
-            Application.Quit();
-        }
+        buttonProcess_ = new ButtonProcess( GetComponent<AudioSource>());
     }
 
     public void Push() {
 
         buttonProcess_.Push();
+
+        Fader.instance.BlackOut( end );
+        
+        transform.parent.gameObject.SetActive(false);
     }
+    
 }

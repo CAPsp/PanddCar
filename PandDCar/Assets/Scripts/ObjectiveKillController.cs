@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using Original.Debug;
 
+
+// TODO: TimerControlと被ってる処理多いためいい感じに直す
 public class ObjectiveKillController : MonoBehaviour {
 
     // 定数
@@ -10,6 +12,7 @@ public class ObjectiveKillController : MonoBehaviour {
 
     [SerializeField] Sprite[] numbers_      = new Sprite[10];
     [SerializeField] int objectiveKillNum_  = 100;              // 目標キル数
+    [SerializeField] GameObject clearObj_;
 
     float imageWidth_;
     GameObject[] imageObjects_ = new GameObject[DIGIT_NUMER];
@@ -34,6 +37,7 @@ public class ObjectiveKillController : MonoBehaviour {
             rectTrans.anchorMin = new Vector2(0f, 0.5f);
             rectTrans.anchorMax = new Vector2(0f, 0.5f);
             rectTrans.sizeDelta = new Vector2(imageWidth_, parentRect.height);
+            rectTrans.localScale = new Vector3(1f, 1f, 1f);
 
             imageObjects_[i].AddComponent<Image>();
 
@@ -45,13 +49,17 @@ public class ObjectiveKillController : MonoBehaviour {
 
     // キルしたらこれを呼ぶ
     public void Kill() {
+
         objectiveKillNum_--;
-        Draw();
 
         // クリア判定
         if (objectiveKillNum_ <= 0) {
-            //TODO
+            objectiveKillNum_ = 0;
+            clearObj_.SetActive(true);
         }
+
+
+        Draw();
 
     }
 

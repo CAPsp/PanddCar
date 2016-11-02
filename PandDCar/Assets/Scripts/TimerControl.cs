@@ -65,7 +65,8 @@ public class TimerControl : MonoBehaviour {
         }
         if (seconds < 0) {
             gameover.SendMessage("Zero");
-            return; // TODO: GAME OVER処理
+			gameObject.SetActive (false);
+            return;
         }
         if(beforeSeconds_ != seconds) {
             Draw(seconds);
@@ -98,8 +99,7 @@ public class TimerControl : MonoBehaviour {
 
     }
 
-    public void Drop()
-    {
+    public void Drop(){
         dropFlag = true;       
     }
 

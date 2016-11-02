@@ -543,8 +543,8 @@ MonoBehaviour:
   spawnObj_:
   - {fileID: 1000012044008826, guid: e86284843312b4f0da7568fad7df62ee, type: 2}
   intervalSeconds_: 0.1
-  spawnCircleRad_: 100
-  initialEnemyNum_: 300
+  spawnCircleRad_: 50
+  initialEnemyNum_: 1000
 --- !u!4 &448893430
 Transform:
   m_ObjectHideFlags: 0
@@ -552,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 448893428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 52.4}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1586,8 +1586,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1454106541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 52.4}
-  m_LocalScale: {x: 200, y: 1, z: 200}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1664557446}
@@ -1652,7 +1652,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 46aa36845c69c4aa9bb94060c542839d, type: 3}
   - {fileID: 21300000, guid: 5acf678f8a8d141d19d4083e2b754e3a, type: 3}
   - {fileID: 21300000, guid: 33ef20dc0e9674c0fa8c3b06ce22c9d2, type: 3}
-  limitSeconds_: 100
+  limitSeconds_: 2
   dropFlag: 0
 --- !u!1001 &1548512104
 Prefab:

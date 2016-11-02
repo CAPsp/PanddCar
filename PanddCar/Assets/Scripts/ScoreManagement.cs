@@ -16,8 +16,8 @@ namespace Original {
 
             // キーがないなら新しく保存
             int i = 1;
-            if (PlayerPrefs.HasKey(i.ToString())) {
-
+            if (!PlayerPrefs.HasKey(i.ToString())) {
+				
                 for (i = 1; i <= LIMIT_RANK; i++) {
                     PlayerPrefs.SetInt(i.ToString(), 0);
                 }
@@ -37,7 +37,7 @@ namespace Original {
         // 引数に応じてランクにスコアを書き込み
         public static void Write(int rank, int score) {
 
-            DebugCommon.Assert( 1 <= rank && rank <+ LIMIT_RANK );
+            DebugCommon.Assert( 1 <= rank && rank <= LIMIT_RANK );
 
             // 新しいランクのために既存のランクをずらす処理
             for(int i = LIMIT_RANK - 1; i >= rank; i--) {

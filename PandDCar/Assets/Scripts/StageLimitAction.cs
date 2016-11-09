@@ -1,1 +1,0 @@
-﻿using UnityEngine;using System.Collections;public class StageLimitAction : MonoBehaviour {    void OnTriggerEnter(Collider other) {        // 車なら        if(other.gameObject.tag == "Player") {        }        // 他のものなら(主に敵)        else {            Destroy(other.gameObject);        }            }}

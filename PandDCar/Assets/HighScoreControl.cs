@@ -27,7 +27,8 @@ public class HighScoreControl : MonoBehaviour {
     public void CheckScore(int score) {
         
         // スコア更新処理
-        ArrayList array = ScoreManagement.Read();        for (int i = 0; i < ScoreManagement.LIMIT_RANK; i++) {
+        ArrayList array = ScoreManagement.Read();
+        for (int i = 0; i < ScoreManagement.LIMIT_RANK; i++) {
 
             if ( score >= (int)array[i]) {
                 ScoreManagement.Write(i + 1, score);
@@ -36,7 +37,9 @@ public class HighScoreControl : MonoBehaviour {
                 text_.enabled = true;
 
                 break;
-            }        }    
+            }
+        }
+    
     }
 
 }

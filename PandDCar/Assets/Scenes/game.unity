@@ -863,6 +863,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448893430}
   - 114: {fileID: 448893429}
+  - 114: {fileID: 448893431}
   m_Layer: 0
   m_Name: Enemies1
   m_TagString: Untagged
@@ -884,8 +885,8 @@ MonoBehaviour:
   spawnObj_:
   - {fileID: 1000012449954976, guid: 8d253d14e2d1fdc4d8c95d8965911fe6, type: 2}
   intervalSeconds_: 0.1
-  spawnCircleRad_: 30
-  initialEnemyNum_: 10
+  spawnCircleRad_: 50
+  initialEnemyNum_: 100
 --- !u!4 &448893430
 Transform:
   m_ObjectHideFlags: 0
@@ -899,6 +900,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!114 &448893431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448893428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf26e1586996c4e93bf9a3572952d1f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intervalSeconds_: 1
+  activePercent_: 0.3
 --- !u!4 &470440225 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e9aa4b7def958e54bad9089e96b5a063, type: 2}
@@ -1197,6 +1211,11 @@ Prefab:
         type: 2}
       propertyPath: m_Downforce
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012510533890, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: impulseVol_
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
@@ -2687,7 +2706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1573865709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3188,7 +3207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1736054877
 MonoBehaviour:
   m_ObjectHideFlags: 0

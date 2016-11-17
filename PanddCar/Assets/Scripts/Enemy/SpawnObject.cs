@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 // Object、範囲、周期を指定すると、範囲内のランダムな位置にObjectが出現する
 public class SpawnObject : MonoBehaviour {
@@ -9,20 +10,23 @@ public class SpawnObject : MonoBehaviour {
 	[SerializeField] float spawnCircleRad_  = 25f;		// 起点からの出現範囲を示す円の半径
     [SerializeField] int initialEnemyNum_   = 100;
 
-	float currentSeconds_;	// 計測地点から今までの時間
+	float currentSeconds_;				// 計測地点から今までの時間
 	Spawn spawn_;
+	List<GameObject> enemyList_;		// スポーンした敵obj
 
 	void Awake(){
 		currentSeconds_ = 0f;
 		spawn_ 			= null;
+		enemyList_		= new List<GameObject>();
 	}
 
     // 初期値分、敵をスポーンさせる
     void Start() {
 
         for(int i = 0; i < initialEnemyNum_; i++) {
-            Spawn tmp = RandomSpawn();
-            tmp.InstantSpawn().transform.parent = this.transform;
+			GameObject tmp 			= RandomSpawn().InstantSpawn();
+            tmp.transform.parent 	= this.transform;
+			enemyList_.Add (tmp);
         }
     }
 
@@ -45,10 +49,15 @@ public class SpawnObject : MonoBehaviour {
 		if (spawnedObj != null) {
 			
 			spawnedObj.transform.parent = this.transform;
+			enemyList_.Add (spawnedObj);
 			spawn_ 						= null;
 			currentSeconds_ 			= 0f;
 		}
 
+	}
+
+	public List<GameObject> GetEnemyList(){
+		return enemyList_;
 	}
 
     // 乱数で決めた位置にオブジェクトを出現させる

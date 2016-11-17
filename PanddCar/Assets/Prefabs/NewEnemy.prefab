@@ -36,8 +36,8 @@ GameObject:
   - 4: {fileID: 4000013567455156}
   - 33: {fileID: 33000011662316866}
   - 23: {fileID: 23000010822382728}
-  - 64: {fileID: 64000013681670454}
-  - 54: {fileID: 54000011619204254}
+  - 65: {fileID: 65000014213068146}
+  - 54: {fileID: 54000010177031746}
   m_Layer: 0
   m_Name: NewEnemy
   m_TagString: Enemy
@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012449954976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.26, y: 0, z: 0.001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -262,23 +262,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012449954976}
   m_Mesh: {fileID: 4300000, guid: a5ccfec3602abe445b314dd8ebf72ed6, type: 3}
---- !u!54 &54000011619204254
+--- !u!54 &54000010177031746
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012449954976}
   serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 1
-  m_AngularDrag: Infinity
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!64 &64000013681670454
-MeshCollider:
+--- !u!65 &65000014213068146
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -287,5 +287,5 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: a5ccfec3602abe445b314dd8ebf72ed6, type: 3}
+  m_Size: {x: 1, y: 1, z: 0.8}
+  m_Center: {x: 0, y: 0.8, z: 0.18}

@@ -26,6 +26,10 @@ public class StageLimitAction : MonoBehaviour {
 
         // 敵なら
         else if(other.gameObject.tag == "Enemy"){
+
+			// 管理しているListから削除
+			other.transform.parent.GetComponent<SpawnObject> ().GetEnemyList ().Remove (other.gameObject);
+
             Destroy(other.gameObject);
         }
         

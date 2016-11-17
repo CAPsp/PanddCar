@@ -24,7 +24,9 @@ public class EnemyAction : MonoBehaviour {
 		}
 		currentSeconds_ = 0f;
 
-		int maxSize = transform.childCount;
+
+		Rigidbody[] childrenRigid 	= GetComponentsInChildren<Rigidbody>();
+		int maxSize = childrenRigid.Length;
 
 		// 集合から重複なしランダムな数列を生成する。改良Fisher-Yates法を使用。
 		Dictionary<int, int> children = new Dictionary<int, int>();
@@ -34,7 +36,6 @@ public class EnemyAction : MonoBehaviour {
 
 		int activeNum 				= (int)((float)maxSize * activePercent_);
 		System.Random randGen 		= new System.Random( System.Environment.TickCount );
-		Rigidbody[] childrenRigid 	= GetComponentsInChildren<Rigidbody>();
 		int randValue, index;
 		for (int i = 0; i < activeNum; i++) {
 			
@@ -47,8 +48,8 @@ public class EnemyAction : MonoBehaviour {
 			}
 			else {						// 移動
 				
-				if (childrenRigid [index].gameObject.GetComponent<EnemyMove> () == null) {
-					childrenRigid [index].gameObject.AddComponent <EnemyMove>();
+				if (childrenRigid[index].gameObject.GetComponent<EnemyMove> () == null) {
+					childrenRigid[index].gameObject.AddComponent <EnemyMove>();
 				}
 			}
 

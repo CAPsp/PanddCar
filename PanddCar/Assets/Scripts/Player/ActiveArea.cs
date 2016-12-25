@@ -10,12 +10,13 @@ public class ActiveArea : MonoBehaviour {
 	float radial_ 		= 30f;
 
 	[SerializeField]
-	float activeTime_ 	= 3f;		// このスクリプトが動作するようになるタイミング(こうしないと最初の敵が落ちてこない)
+	float activeTime_ 	= 2f;		// このスクリプトが動作するようになるタイミング(こうしないと最初の敵が落ちてこない)
 
 	[SerializeField]
 	GameObject parentEnemy_;
 
-	float seconds_ = 0f;
+	bool activate_ 	= false;	// 初めの動作でtrueに
+	float seconds_ 	= 0f;
 
 	void Update(){
 
@@ -45,6 +46,9 @@ public class ActiveArea : MonoBehaviour {
 
 		}
 
+		activate_ = true;
 	}
+
+	public bool GetActivate(){ return activate_; }
 
 }

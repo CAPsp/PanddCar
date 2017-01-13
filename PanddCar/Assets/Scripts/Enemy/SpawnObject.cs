@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 // Object、範囲、周期を指定すると、範囲内のランダムな位置にObjectが出現する
+// 範囲は長方形で表現され、このオブジェクトが存在する点が中心となる
 public class SpawnObject : MonoBehaviour {
 
 	[SerializeField] GameObject[] spawnObj_;
 	[SerializeField] float intervalSeconds_ = 1f;
-	[SerializeField] float spawnCircleRad_  = 25f;		// 起点からの出現範囲を示す円の半径
-    [SerializeField] int initialEnemyNum_   = 100;
+	[SerializeField] float spawnX_;		// 出現範囲を示す長方形の横
+	[SerializeField] float spawnZ_;		// 出現範囲を示す長方形の縦
+    [SerializeField] int initialEnemyNum_   = 10;
 
 	float currentSeconds_;				// 計測地点から今までの時間
 	Spawn spawn_;
@@ -63,9 +65,10 @@ public class SpawnObject : MonoBehaviour {
     // 乱数で決めた位置にオブジェクトを出現させる
     Spawn RandomSpawn() {
 
-        // 起点位置(このObj自体) + xz面に並行な円内部のランダムな点 = 出現位置
-        Vector2 randCircle = Random.insideUnitCircle * spawnCircleRad_;
-        Vector3 spawnPoint = transform.position + new Vector3(randCircle.x, 0, randCircle.y);
+        // 起点位置(このObj自体) + 決めた長方形の出現範囲内のランダムな点 = 出現位置
+		float x = spawnX_ * (Random.value - 0.5f);
+		float z = spawnZ_ * (Random.value - 0.5f);
+        Vector3 spawnPoint = transform.position + new Vector3(x, 0, z);
 
         // C#既存の乱数生成クラスを使う(戻り値がintで使いやすい)
         System.Random cRand = new System.Random();
@@ -101,6 +104,12 @@ public class SpawnObject : MonoBehaviour {
             return spawnedObj;
         }
 
+	}
+
+	// Debug用、出現範囲の可視化
+	void OnDrawGizmosSelected(){
+		Gizmos.color = Color.blue;
+		Gizmos.DrawWireCube (transform.position, new Vector3(spawnX_, 1, spawnZ_));
 	}
 
 }

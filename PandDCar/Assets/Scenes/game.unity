@@ -2700,6 +2700,56 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011059475404, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011496645484, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011496645484, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011496645484, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011496645484, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011496645484, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65000011496645484, guid: de5e9e832a30b40898d66f6aea1587d4,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013187985646, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010674933648, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012335757832, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010607463906, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de5e9e832a30b40898d66f6aea1587d4, type: 2}
   m_IsPrefabParent: 0
@@ -6435,7 +6485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1931064654
 AudioSource:
   m_ObjectHideFlags: 0

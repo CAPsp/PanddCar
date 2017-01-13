@@ -27,6 +27,17 @@ namespace UnityStandardAssets.Vehicles.Car
 #else
             m_Car.Move(h, v, v, 0f);
 #endif
-        }
+
+			// ひっくり返らないように調整
+			Vector3 rotationEuler = gameObject.GetComponent<Rigidbody>().rotation.eulerAngles;
+			if (rotationEuler.x >= 20f && rotationEuler.x <= 340f) {
+				rotationEuler.x = (rotationEuler.x <= 180f) ? 20f : 340f;
+			}
+			if (rotationEuler.z >= 20f && rotationEuler.z <= 340f) {
+				rotationEuler.z = (rotationEuler.z <= 180f) ? 20f : 340f;
+			}
+			transform.rotation = Quaternion.Euler(rotationEuler);
+		
+		}
     }
 }

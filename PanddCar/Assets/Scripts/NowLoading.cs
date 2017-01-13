@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 
 public class NowLoading : MonoBehaviour {
 
@@ -24,6 +25,9 @@ public class NowLoading : MonoBehaviour {
 		if (fadeOut ()) {
 			timerControl_.enabled 	= true;
 			this.enabled 			= false;
+
+			// 操作を受け付けるようにする
+			GameObject.FindGameObjectWithTag("Player").GetComponent<CarUserControl>().enabled = true;
 		}
 	}
 
